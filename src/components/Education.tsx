@@ -40,7 +40,7 @@ export function Education() {
       date: '2025',
     },
     {
-      name: 'Cybersecurity Fundamental',
+      name: 'CS50\'s Introduction to Cybersecurity',
       issuer: 'edX (HarvardX)',
       date: '2025',
     },
