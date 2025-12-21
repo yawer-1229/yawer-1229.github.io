@@ -6,7 +6,7 @@ export function Projects() {
       title: 'Kernel Watchtower',
       description: 'A real-time security observability engine executing in Linux Kernel Ring 0. Uses eBPF probes to intercept malicious syscalls and detect rootkits like Diamorphine.',
       tags: ['C', 'eBPF', 'Python', 'Linux Kernel'],
-      githubUrl: 'https://github.com/yawer-1229/kernel-watchtower',
+      githubUrl: 'https://github.com/yawer-1229/Kernel_Watch-tower',
       icon: Terminal,
     },
     {
