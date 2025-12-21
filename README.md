@@ -1,6 +1,6 @@
 # Professional Portfolio
 
-A personal portfolio website showcasing my projects in Computer Science, Cybersecurity, and Machine Learning.
+This repository contains the source code for my personal portfolio website
 Built with React, Vite, and Tailwind CSS.
 
 ## Features
