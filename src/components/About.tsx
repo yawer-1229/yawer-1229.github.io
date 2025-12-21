@@ -44,7 +44,7 @@ export function About() {
             </h1>
 
             <p className="text-gray-600 mb-8 max-w-xl text-lg leading-relaxed"> 
-             I am a Computer Science student Focusing on cybersecurity and machine learning. I am learning about threat detection, intrusion prevention, and AI-enhanced security systems through my coursework, projects, and self-study. My goal is to design secure and innovative solutions to address the challenges in technology.
+             Computer Science Engineering student Focusing on cybersecurity and machine learning. I am learning about threat detection, intrusion prevention, and AI enhanced security systems through my coursework, projects, and self-study. My goal is to design secure and innovative solutions to address the challenges in technology.
             </p>
 
            
