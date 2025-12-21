@@ -1,4 +1,4 @@
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 export function Education() {
   const education = [
@@ -12,7 +12,6 @@ export function Education() {
         'Institute Ambassador for DEFCON Srinagar Conference 2025',
         'Head of the university Research Club',
         'Participated in coding competitions and hackathons',
-      
       ],
     },
     {
@@ -21,7 +20,6 @@ export function Education() {
       period: '2020 - 2022',
       gpa: '8.2/10',
       description: 'Focused on Science stream with Mathematics, Physics, Chemistry, and Computer Science.',
-      
     },
     {
       degree: 'Secondary School Education',
@@ -29,20 +27,6 @@ export function Education() {
       period: '2018 - 2020',
       gpa: '9.8/10',
       description: 'Focused on Science stream with Mathematics, Physics, Chemistry, and Computer Science.',
-      
-    },
-  ];
-
-  const certifications = [
-    {
-      name: 'Certified in Cybersecurity (CC) Training',
-      issuer: 'ICS2',
-      date: '2025',
-    },
-    {
-      name: 'CS50\'s Introduction to Cybersecurity',
-      issuer: 'edX (HarvardX)',
-      date: '2025',
     },
   ];
 
@@ -50,11 +34,11 @@ export function Education() {
     <section id="education" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-gray-900 mb-4">Education & Certifications</h2>
+          <h2 className="text-gray-900 mb-4">Education</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
-        <div className="mb-16">
+        <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <GraduationCap className="text-blue-600" size={32} />
             <h3 className="text-gray-900">Academic Background</h3>
@@ -89,30 +73,6 @@ export function Education() {
                     </ul>
                   </div>
                 )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div className="flex items-center gap-3 mb-8">
-            <Award className="text-blue-600" size={32} />
-            <h3 className="text-gray-900">Certifications</h3>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-50 rounded-lg">
-                    <BookOpen className="text-blue-600" size={24} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-gray-900 mb-1">{cert.name}</h4>
-                    <p className="text-gray-600 mb-1">{cert.issuer}</p>
-                    <p className="text-gray-500 text-sm">{cert.date}</p>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
