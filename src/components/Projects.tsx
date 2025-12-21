@@ -1,13 +1,20 @@
-import { Github, Terminal } from 'lucide-react';
+import { Github, Terminal, Layout } from 'lucide-react';
 
 export function Projects() {
   const projects = [
     {
-      title: 'Kernel Watchtower: eBPF Rootkit Detector',
-      description: 'A real-time security observability engine executing in Linux Kernel Ring 0. It uses eBPF probes to intercept malicious syscalls (execve, openat, unlinkat) and detects rootkits like Diamorphine before they can hide.',
-      tags: ['C', 'eBPF', 'Python', 'BCC', 'Linux Kernel', 'Forensics'],
-      githubUrl: 'https://github.com/yawer-1229/Kernel_Watch-tower', 
+      title: 'Kernel Watchtower',
+      description: 'A real-time security observability engine executing in Linux Kernel Ring 0. Uses eBPF probes to intercept malicious syscalls and detect rootkits like Diamorphine.',
+      tags: ['C', 'eBPF', 'Python', 'Linux Kernel'],
+      githubUrl: 'https://github.com/yawer-1229/kernel-watchtower',
       icon: Terminal,
+    },
+    {
+      title: 'Professional Portfolio',
+      description: 'The responsive website you are looking at right now. Built with modern React architecture, featuring component-based design, smooth animations, and automated GitHub Actions deployment.',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      githubUrl: 'https://github.com/yawer-1229/yawer-1229.github.io',
+      icon: Layout,
     },
   ];
 
@@ -19,12 +26,12 @@ export function Projects() {
           <div className="w-20 h-1 bg-blue-600"></div>
         </div>
 
-       
-        <div className="grid md:grid-cols-1 max-w-2xl w-full">
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
             {projects.map((project, index) => {
               const Icon = project.icon;
               return (
-                <div key={index} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                <div key={index} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full">
                   
                   {/* Header */}
                   <div className="flex items-center gap-4 mb-6">
