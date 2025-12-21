@@ -1,6 +1,7 @@
 # Professional Portfolio
+This repository contains the source code for my personal portfolio website.
 
-This repository contains the source code for my personal portfolio website
+
 Built with React, Vite, and Tailwind CSS.
 
 ## Features
