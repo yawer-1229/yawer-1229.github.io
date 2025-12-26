@@ -12,6 +12,11 @@ export function Certificates() {
       issuer: 'edX (HarvardX)',
       date: '2025',
     },
+    {
+      name: 'Building RAG Agents with LLMs',
+      issuer: 'NVIDIA',
+      date: '2025',
+    }
   ];
 
   return (
