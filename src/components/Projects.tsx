@@ -4,7 +4,7 @@ export function Projects() {
   const projects = [
     {
       title: 'Kernel Watchtower',
-      description: 'A real-time security observability engine executing in Linux Kernel Ring 0. Uses eBPF probes to intercept malicious syscalls and detect rootkits like Diamorphine.',
+      description: 'A real time security observability engine executing in Linux Kernel Ring 0. Uses eBPF probes to intercept malicious syscalls and detect rootkits like Diamorphine.',
       tags: ['C', 'eBPF', 'Python', 'Linux Kernel'],
       githubUrl: 'https://github.com/yawer-1229', 
       icon: Terminal,
@@ -18,7 +18,7 @@ export function Projects() {
     },
     {
       title: 'Professional Portfolio',
-      description: 'The responsive website you are looking at right now. Built with modern React architecture, featuring component-based design, smooth animations, and automated GitHub Actions deployment.',
+      description: 'The responsive website you are looking at right now. Built with modern React architecture, featuring component based design, smooth animations, and automated GitHub Actions deployment.',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
       githubUrl: 'https://github.com/yawer-1229/yawer-1229.github.io', 
       icon: Layout,
