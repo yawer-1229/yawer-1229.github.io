@@ -1,4 +1,4 @@
-import { Github, Terminal, Layout } from 'lucide-react';
+import { Github, Terminal, Layout, Cpu } from 'lucide-react';
 
 export function Projects() {
   const projects = [
@@ -6,14 +6,21 @@ export function Projects() {
       title: 'Kernel Watchtower',
       description: 'A real-time security observability engine executing in Linux Kernel Ring 0. Uses eBPF probes to intercept malicious syscalls and detect rootkits like Diamorphine.',
       tags: ['C', 'eBPF', 'Python', 'Linux Kernel'],
-      githubUrl: 'https://github.com/yawer-1229/Kernel_Watch-tower',
+      githubUrl: 'https://github.com/yawer-1229', 
       icon: Terminal,
+    },
+    {
+      title: 'Smart Parking System',
+      description: 'An IoT-based automated parking management system. Uses IR sensors and microcontrollers (Arduino/ESP8266) to detect real-time slot occupancy and update a central dashboard.',
+      tags: ['C++', 'Arduino', 'IoT', 'Embedded Systems'],
+      githubUrl: 'https://github.com/yawer-1229/Smart_Parking_System_IoT', 
+      icon: Cpu,
     },
     {
       title: 'Professional Portfolio',
       description: 'The responsive website you are looking at right now. Built with modern React architecture, featuring component-based design, smooth animations, and automated GitHub Actions deployment.',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      githubUrl: 'https://github.com/yawer-1229/yawer-1229.github.io',
+      githubUrl: 'https://github.com/yawer-1229/yawer-1229.github.io', 
       icon: Layout,
     },
   ];
