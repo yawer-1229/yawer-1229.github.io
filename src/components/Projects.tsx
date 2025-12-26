@@ -11,8 +11,8 @@ export function Projects() {
     },
     {
       title: 'Smart Parking System',
-      description: 'An IoT-based automated parking management system. Uses IR sensors and microcontrollers (Arduino/ESP8266) to detect real-time slot occupancy and update a central dashboard.',
-      tags: ['C++', 'Arduino', 'IoT', 'Embedded Systems'],
+      description: 'A Single Node Parking Lot Management System designed for automated infrastructure. Utilizes ultrasonic echolocation for real time occupancy monitoring and controls a Visual Semaphore (RGB LED) to guide drivers. Features a custom signal processing algorithm to prevent false triggers from transient noise.',
+      tags: ['Embedded C++', 'Ultrasonic Sensors', 'Signal Processing', 'IoT'],
       githubUrl: 'https://github.com/yawer-1229/Smart_Parking_System_IoT', 
       icon: Cpu,
     },
