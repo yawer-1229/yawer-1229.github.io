@@ -54,7 +54,7 @@ export function Education() {
                   </div>
                   <div className="text-gray-500 md:text-right mt-2 md:mt-0">
                     {edu.period && <div>{edu.period}</div>}
-                    <div className="text-gray-900">GPA: {edu.gpa}</div>
+                    <div className="text-gray-900">Percentage: {edu.Percentage}</div>
                   </div>
                 </div>
                 
