@@ -6,7 +6,7 @@ export function Education() {
       degree: 'Bachelor of Technology in Computer Science Engineering',
       institution: 'Central University of Kashmir',
       period: '2022 - Present',
-      gpa: '7.3/10',
+      Percentage: '73%',
       description: 'Specialization in Cyber Security and Artificial Intelligence. Relevant coursework includes Network Security, Data Structures, Algorithms, Machine Learning, Database Systems, and Web Development.',
       achievements: [
         'Institute Ambassador for DEFCON Srinagar Conference 2025',
@@ -18,14 +18,14 @@ export function Education() {
       degree: 'Higher Secondary Education',
       institution: 'Space Age Higher Secondary',
       period: '2020 - 2022',
-      gpa: '8.2/10',
+      Percentage: '82%',
       description: 'Focused on Science stream with Mathematics, Physics, Chemistry, and Computer Science.',
     },
     {
       degree: 'Secondary School Education',
       institution: 'New Generation Public School',
       period: '2018 - 2020',
-      gpa: '9.8/10',
+      Percentage: '98%',
       description: 'Focused on Science stream with Mathematics, Physics, Chemistry, and Computer Science.',
     },
   ];
