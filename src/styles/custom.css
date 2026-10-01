@@ -1,0 +1,491 @@
+/* Professional Portfolio Custom Styles */
+
+/* ========================================
+   Font Families
+======================================== */
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ========================================
+   CSS Variables - Design Tokens
+======================================== */
+:root {
+  /* Primary Colors */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-200: #bfdbfe;
+  --primary-300: #93c5fd;
+  --primary-400: #60a5fa;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+  --primary-900: #1e3a8a;
+  
+  /* Neutral Colors */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 40px -10px rgb(37 99 235 / 0.3);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ========================================
+   Base Styles
+======================================== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* ========================================
+   Animation Keyframes
+======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px -5px rgb(37 99 235 / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px -5px rgb(37 99 235 / 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes progress-fill {
+  from { width: 0; }
+}
+
+/* ========================================
+   Utility Classes
+======================================== */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Stagger delays for children */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ========================================
+   Glass Morphism
+======================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   Gradient Text
+======================================== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   Interactive Elements
+======================================== */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+  transition: transform var(--transition-fast);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Button hover underline effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-600);
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ========================================
+   Card Styles
+======================================== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--gray-100);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--primary-100);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   Section Styles
+======================================== */
+.section-heading {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  color: var(--gray-900);
+}
+
+.section-subheading {
+  color: var(--gray-500);
+  font-size: 1.125rem;
+  max-width: 600px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-600), var(--primary-400));
+  border-radius: 2px;
+}
+
+/* ========================================
+   Progress Bars
+======================================== */
+.progress-bar {
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-600), var(--primary-400));
+  border-radius: 3px;
+  animation: progress-fill 1s ease-out forwards;
+}
+
+/* ========================================
+   Tag/Badge Styles
+======================================== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background: var(--primary-50);
+  color: var(--primary-700);
+}
+
+/* ========================================
+   Timeline Styles
+======================================== */
+.timeline-line {
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary-200), var(--gray-200));
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-50);
+  border: 3px solid var(--primary-500);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ========================================
+   Button Styles
+======================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 14px -3px rgb(37 99 235 / 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -3px rgb(37 99 235 / 0.5);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-weight: 600;
+  color: var(--primary-600);
+  background: transparent;
+  border: 2px solid var(--primary-600);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-50);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Icon Container
+======================================== */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+  border-radius: 12px;
+  color: var(--primary-600);
+}
+
+.icon-container-lg {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 16px;
+}
+
+/* ========================================
+   Social Links
+======================================== */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  color: var(--gray-600);
+  transition: all var(--transition-base);
+}
+
+.social-link:hover {
+  border-color: var(--primary-400);
+  color: var(--primary-600);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   Responsive Typography Scale
+======================================== */
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.text-headline {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.text-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+}
+
+.text-small {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+/* ========================================
+   Background Patterns
+======================================== */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at top, var(--primary-50) 0%, transparent 50%);
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--gray-200) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

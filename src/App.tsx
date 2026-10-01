@@ -1,27 +1,34 @@
-import { Header } from './components/Header';
-import { About } from './components/About'; 
-import { Education } from './components/Education'; 
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { Certificates } from './components/Certificates'; // <-- Import new component
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import { ArrowRight, ArrowUpRight, BookOpen, Check, Copy, Download, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Navigation } from './components/academic/Navigation';
+import { ProjectList } from './components/academic/ProjectList';
+import { Background } from './components/academic/Background';
+import { profile, publications } from './data/portfolio';
 
-function App() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <About /> 
-        <Education />
-        <Skills />
-        <Projects />
-        <Certificates /> {/* <-- Placed below Projects! */}
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
+function SectionHeading({ number, label, title, description }: { number: string; label: string; title: string; description?: string }) {
+  return <div className="section-heading"><div><div className="eyebrow"><span>{number} /</span> {label}</div><h2>{title}</h2></div>{description && <p>{description}</p>}</div>;
 }
 
-export default App;
+export default function App() {
+  const [copyStatus, setCopyStatus] = useState('');
+  const timer = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => () => clearTimeout(timer.current), []);
+  async function copyEmail() {
+    clearTimeout(timer.current);
+    try { await navigator.clipboard.writeText(profile.email); setCopyStatus('Email copied'); }
+    catch { setCopyStatus('Please select the email address to copy it.'); }
+    timer.current = setTimeout(() => setCopyStatus(''), 3500);
+  }
+  return <><a className="skip-link" href="#main">Skip to content</a><Navigation/><main id="main">
+    <section id="about" className="container hero">
+      <div className="hero-copy"><div className="eyebrow"><span className="tiny-dot"/> CYBERSECURITY · ARTIFICIAL INTELLIGENCE</div><h1>Yawer Nazir</h1><p className="hero-role">Computer Science & Engineering Graduate</p><p className="hero-description">My research interests focus on cybersecurity and artificial intelligence, particularly AI-based malware detection, threat analysis, and systems security.</p><p className="hero-detail">My work spans transformer-based malware analysis, Linux security monitoring, and applied machine learning. I am interested in research opportunities that advance intelligent security systems.</p><div className="hero-actions"><a className="button primary" href="#research">Explore my research <ArrowRight size={16}/></a><a className="button secondary" href={profile.cv} download="Yawer_Nazir_CV.pdf"><Download size={16}/> Download CV</a></div><div className="hero-social"><span><MapPin size={14}/> Srinagar, India</span><i/><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17}/></a><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17}/></a><a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={17}/></a></div></div>
+      <div className="hero-aside"><div className="portrait-frame"><img src="/images/yawer-nazir-portrait.jpg" alt="Professional portrait of Yawer Nazir" width="1117" height="1409" fetchPriority="high"/></div><div className="affiliation"><span className="affiliation-icon"><BookOpen size={19} strokeWidth={1.4}/></span><div><span className="eyebrow">RESEARCH EXPERIENCE</span><strong>Indian Institute of Technology Jammu</strong><span>Applied machine learning research</span></div></div></div>
+    </section>
+    <section id="research" className="section research-section"><div className="container"><SectionHeading number="01" label="Research" title="Cybersecurity & Artificial Intelligence" description="Research interests in intelligent malware detection, systems security, and applied machine learning."/>
+      <article className="research-focus"><div><span className="eyebrow">CYBERSECURITY RESEARCH</span><h3>AI-based malware detection</h3></div><div><p><strong>Beyond Signatures: Semantic Intelligence Against Generative Malware Evolution</strong></p><p>A cross-modal transformer approach to analyzing evolving malware behavior, combining machine learning with virtual machine introspection and dynamic analysis.</p><div className="tags"><span>Malware analysis</span><span>Transformers</span><span>DRAKVUF</span><span>LibVMI</span></div><a href="#projects">View project details <ArrowRight size={14}/></a></div></article><div className="research-layout"><aside className="experience"><span className="eyebrow">RESEARCH EXPERIENCE</span><h3>Research Intern</h3><p className="institution">IIT Jammu</p><p className="mono">DEC 2025 — PRESENT</p><div className="advisor">Advised by<br/><strong>Dr. Karan Nathwani</strong></div><p>Developing deep learning models for multimodal classification, representation alignment, and voice–iris biometric feature fusion. Applications include auditory attention decoding using the MM-AAD dataset.</p><div className="tags"><span>Deep learning</span><span>Multimodal learning</span><span>Biometrics</span></div></aside><div className="publication-list"><div className="list-label"><span>SELECTED MANUSCRIPTS</span><span>01 — 02</span></div>{publications.map((paper, i) => <article className="publication" key={paper.title}><div className="publication-meta"><span className={`status ${paper.status.toLowerCase()}`}><span/>{paper.status}</span><span className="mono">{paper.venue}</span></div><div className="paper-title"><span className="paper-number">0{i + 1}</span><h3>{paper.title}</h3></div><p>{paper.description}</p><span className="paper-topic">{paper.topic}</span></article>)}</div></div>
+    </div></section>
+    <section id="projects" className="section container"><SectionHeading number="02" label="Technical work" title="Selected Projects" description="Applied work across intelligent threat detection, Linux systems, cloud infrastructure, and embedded computing."/><ProjectList/></section>
+    <Background/>
+    <section id="contact" className="contact-section"><div className="container contact-grid"><div><div className="eyebrow"><span className="tiny-dot"/> CONTACT</div><h2>Contact</h2><p>For research collaborations and graduate study opportunities in cybersecurity and artificial intelligence, please contact me by email.</p></div><div className="contact-links"><span className="eyebrow">WRITE TO ME</span><div className="email-row"><a href={`mailto:${profile.email}`}>{profile.email}<ArrowUpRight size={21}/></a><button onClick={copyEmail} aria-label="Copy email address" title="Copy email address">{copyStatus === 'Email copied' ? <Check size={17}/> : <Copy size={17}/>}</button></div><span className="copy-status" role="status">{copyStatus}</span><div className="contact-social"><a href={profile.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a><a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={14}/></a><a href={profile.cv} target="_blank" rel="noreferrer">Curriculum vitae <ArrowUpRight size={14}/></a></div><span className="contact-location"><MapPin size={14}/> Srinagar, Jammu & Kashmir, India</span></div></div></section>
+  </main><footer className="container footer"><span>© {new Date().getFullYear()} Yawer Nazir</span><a href="#about">Back to top ↑</a></footer></>;
+}
