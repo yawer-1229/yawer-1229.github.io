@@ -66,7 +66,7 @@ export function Research() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-indigo-500 mt-2 flex-shrink-0" />
-                  <p>Developed CNN-based iris features and voice-iris feature fusion.</p>
+                  <p>Worked with iris and voice datasets for multimodal biometrics.</p>
                 </div>
               </div>
             </div>

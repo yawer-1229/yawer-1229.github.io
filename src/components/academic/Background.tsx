@@ -7,7 +7,7 @@ export function Background() {
         <div className="section-heading"><div><div className="eyebrow"><span>03 /</span> Academic background</div><h2>Education</h2></div></div>
         <div className="education-list">{education.map(item => <article className="education-entry" key={item.level}>
           <div className="education-period"><span className="mono">{item.period}</span><span className="eyebrow">{item.level}</span></div>
-          <div className="degree"><h3>{item.degree}</h3><p className="institution">{item.institution}</p><p>{item.location}</p><div className="degree-meta"><span>{item.result}</span></div><p className="coursework">{item.detail}</p></div>
+          <div className="degree"><h3>{item.degree}</h3><p className="institution">{item.institution}</p><p>{item.location}</p><div className="degree-meta"><span>{item.result}</span></div><p className="coursework">{item.mathematics && <strong>Relevant coursework: </strong>}{item.detail}</p>{item.programming && <p className="coursework"><strong>Programming languages: </strong>{item.programming}</p>}{item.mathematics && <p className="coursework"><strong>Mathematics: </strong>{item.mathematics}</p>}</div>
         </article>)}</div>
       </div>
     </section>

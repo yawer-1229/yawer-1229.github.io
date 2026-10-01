@@ -1,0 +1,9 @@
+
+# Private academic records: never commit or publish.
+private-documents/
+*ranscript*
+*ranscripts*
+*arksheet*
+*ark_sheet*
+# Local operating-system metadata.
+.DS_Store
