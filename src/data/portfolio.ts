@@ -3,7 +3,7 @@ export const profile = {
   email: 'yawar1229@gmail.com',
   github: 'https://github.com/yawer-1229',
   linkedin: 'https://www.linkedin.com/in/yawer-nazir-213576250',
-  cv: '/cv.pdf?v=20261001-coursework',
+  cv: '/cv.pdf?v=20261001-coursework-v2',
 };
 
 export const publications = [
@@ -28,7 +28,7 @@ export const skills = [
 ];
 
 export const education = [
-  { level: 'Bachelor of Technology', degree: 'Computer Science & Engineering', institution: 'Central University of Kashmir', period: '2022–2026', location: 'Ganderbal, Jammu & Kashmir, India', result: 'Percentage: 74%', detail: 'Computer Programming, Object Oriented Programming, Data Structures, Design and Analysis of Algorithms, Operating Systems, Database Management Systems, Computer Networks, Network Security, Artificial Intelligence, Machine Learning, and Deep Learning.', programming: 'C, C++, Java, and Python.', mathematics: 'Mathematics I and II; Mathematics III (Differential Equation); Mathematics IV (Probability and Statistics); Discrete Structures.' },
+  { level: 'Bachelor of Technology', degree: 'Computer Science & Engineering', institution: 'Central University of Kashmir', period: '2022–2026', location: 'Ganderbal, Jammu & Kashmir, India', result: 'Percentage: 74%', detail: 'Computer Programming, Object Oriented Programming, Data Structures, Design and Analysis of Algorithms, Operating Systems, Database Management Systems, Computer Networks, Network Security, Artificial Intelligence, Machine Learning, Deep Learning, Discrete Structures, and Mathematics (Differential Equations, Probability and Statistics).', programming: 'C, C++, Java, and Python.' },
   { level: 'Higher secondary · Class XII', degree: 'Higher Secondary School Examination', institution: 'Space Age Higher Secondary School', period: 'Completed 2020', location: 'Srinagar, Jammu & Kashmir, India', result: 'Percentage: 82% · Grade: 8.6', detail: 'Science stream with Physics, Chemistry, and Mathematics (PCM).' },
   { level: 'Secondary · Class X', degree: 'Secondary School Examination', institution: 'New Generation Public School', period: 'Completed 2018', location: 'Srinagar, Jammu & Kashmir, India', result: 'CGPA: 9.8 / 10.0', detail: 'Completed secondary school education in 2018.' },
 ];
