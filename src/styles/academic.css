@@ -50,6 +50,3 @@
 @media(min-width:761px) and (max-width:900px){.header-inner{gap:18px}.brand-caption{letter-spacing:.5px}.brand{gap:8px;font-size:13px}.monogram{padding-right:10px}.navigation{gap:10px;font-size:10px}.navigation .nav-cv{gap:5px;padding:7px 9px}}
 @media(max-width:760px){.education-entry{grid-template-columns:1fr;gap:18px;padding:25px 0}.education-period{flex-direction:row;align-items:center;flex-wrap:wrap;gap:15px}.education-entry .degree{padding-left:18px}.expanded-skills{gap:14px}.skill-panel{padding:20px}.learning-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.leadership-entry{grid-template-columns:1fr;gap:13px}.navigation{gap:2px;font-size:12px}}
 @media(max-width:480px){.expanded-skills{grid-template-columns:1fr}.learning-grid{grid-template-columns:1fr}.skill-panel h3{margin-top:7px}}
-
-/* Standalone header monogram. */
-.brand .monogram{border-right:0;padding-right:0}

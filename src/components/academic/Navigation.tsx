@@ -18,7 +18,7 @@ export function Navigation() {
     return () => { window.removeEventListener('scroll', update); window.removeEventListener('keydown', close); };
   }, []);
   return <header className="site-header"><div className="container header-inner">
-    <a className="brand" href="#about" onClick={() => setOpen(false)} aria-label="Yawer Nazir home"><span className="monogram">yn<span>.</span></span></a>
+    <a className="brand" href="#about" onClick={() => setOpen(false)} aria-label="Yawer Nazir home"><span>Yawer Nazir<span className="brand-caption">CYBERSECURITY & AI</span></span></a>
     <button className="menu-toggle" aria-expanded={open} aria-controls="main-navigation" aria-label={open ? 'Close navigation' : 'Open navigation'} onClick={() => setOpen(!open)}>{open ? <X size={22}/> : <Menu size={22}/>}</button>
     <nav id="main-navigation" aria-label="Main navigation" className={open ? 'navigation is-open' : 'navigation'}>{links.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => setOpen(false)}>{label}</a>)}<a className="nav-cv" href={profile.cv} target="_blank" rel="noreferrer">CV <ArrowUpRight size={14}/></a></nav>
   </div></header>;
